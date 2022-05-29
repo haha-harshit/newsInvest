@@ -1,12 +1,12 @@
-import './App.css';
-
 import React, { Component } from 'react'
+import { NavBar } from './Components/NavBar'
 
-export default class App extends Component {
-  name = "Harshit"
+export class App extends Component {
   render() {
     return (
-      <div>Hi my name is {this.name} </div>
+      <NavBar/>
     )
   }
 }
+
+export default App
