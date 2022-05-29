@@ -5,8 +5,12 @@ export class News extends Component {
   render() {
     return (
         <>
-        <div>This is a news</div>
-        <NewsItem/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
+        <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
         </>
     )
   }
