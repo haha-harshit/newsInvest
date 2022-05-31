@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
 export class NewsItem extends Component {
+
   render() {
-    let {title, description, newsLink, newsImg} = this.props;
+    let {title, description, newsURL, ImgURL, publishedAt, newsAuthor} = this.props;
     return (
       <div>
         <div className="card" style={{width: '18rem'}}>
-          <img src={newsImg} className="card-img-top" alt="..."/>
+          <img src={ImgURL} className="card-img-top" alt="..."/>
           <div className="card-body">
+            <span>Published at: <code>{publishedAt}</code> </span>
+            <div><span>Author: {newsAuthor}</span></div>
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
-            <a href={newsLink} className="btn btn-primary">Read More...</a>
+            <a href={newsURL} className="btn btn-sm btn-primary">Read More</a>
           </div>
         </div>
       </div>
