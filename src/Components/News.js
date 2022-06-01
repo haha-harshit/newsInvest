@@ -46,7 +46,8 @@ export class News extends Component {
   constructor(){
     super();
     this.state = {
-      articles: this.articles
+      articles: this.articles,
+      loading: false
     }
   }
 
@@ -56,15 +57,13 @@ export class News extends Component {
         <div className="container my-5">
           <h2 className="my-5">News Invest | Top Trending News</h2>
           <div className="row">
-            <div className="col-md-4">
-              <NewsItem title="Shane Warne memorial - watch & follow updates" description="Watch live coverage and follow text updates and tributes from the state memorial for Australian cricket legend Shane Warne at the Melbourne Cricket Ground." newsURL="http://www.bbc.co.uk/sport/live/cricket/60916236" ImgURL="https:////m.files.bbci.co.uk/modules/bbc-morph-sport-seo-meta/1.22.0/images/bbc-sport-logo.png" publishedAt="2022-03-30T08:22:26.498888Z" newsAuthor="BBC Sport"/>
+          {this.state.articles.map((element) => 
+            {
+              return <div key={element.url} className="col-md-4">
+              <NewsItem title={element.title} description={element.description.slice(0, 88)} newsURL={element.url} ImgURL={element.urlToImage} publishedAt={element.publishedAt} newsAuthor={element.author}/>
             </div>
-            <div className="col-md-4">
-              <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
-            </div>  
-            <div className="col-md-4">
-              <NewsItem title="Shane Warn retired from cricket." description="On Monday evening announcement came that he'll not be able to play cricket from now as going through a serious medical condition."/>
-            </div>
+            }
+            )}
           </div>
         </div>
         </>
