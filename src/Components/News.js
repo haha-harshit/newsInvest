@@ -43,12 +43,22 @@ export class News extends Component {
         "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
     }
 ]
+
   constructor(){
     super();
     this.state = {
       articles: this.articles,
       loading: false
     }
+  }
+
+  async componentDidMount(){
+    console.log("cdm");
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e88e96828f13490a8b511aad72f75aa4"
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    // this.setState(parsedData.articles)
   }
 
   render() {
@@ -60,7 +70,7 @@ export class News extends Component {
           {this.state.articles.map((element) => 
             {
               return <div key={element.url} className="col-md-4">
-              <NewsItem title={element.title} description={element.description.slice(0, 88)} newsURL={element.url} ImgURL={element.urlToImage} publishedAt={element.publishedAt} newsAuthor={element.author}/>
+              <NewsItem title={element.title} description={element.description.slice(0, 88)} newsURL={element.url} ImgURL={element.urlToImage} publishedAt={element.publishedAt} newsAuthor={!element.author?element.source.name:element.author}/>
             </div>
             }
             )}
