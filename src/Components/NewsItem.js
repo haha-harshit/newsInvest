@@ -8,7 +8,7 @@ export class NewsItem extends Component {
     console.log(date.toISOString().substring(0, 10));
     console.log(date.getMinutes());
 
-    // console.log(date);
+     console.log(date);
     return (
       <div>
         <div className="card" style={{width: '18rem'}}>
